@@ -1,0 +1,12 @@
+﻿Compilación iniciada a las 22/06/2015 10:23:02.
+     1>Proyecto "C:\Users\Propietario\Desktop\Bolito2\Juegos\OpenGL\OpenGL Game Engine\First Game\First Game.vcxproj" en el nodo 2 (Build destinos).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (OpenGL Game Engine.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"stdafx.h" /Fp"Debug\First Game.pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt MainGame.cpp
+         MainGame.cpp
+     1>c:\users\propietario\desktop\bolito2\juegos\opengl\opengl game engine\first game\maingame.cpp(192): fatal error C1010: final de archivo inesperado al buscar la directiva de encabezado precompilado. Compruebe si olvidó agregar '#include "stdafx.h"' al código fuente?
+     1>Compilación del proyecto terminada "C:\Users\Propietario\Desktop\Bolito2\Juegos\OpenGL\OpenGL Game Engine\First Game\First Game.vcxproj" (Build destinos) -- ERROR.
+
+ERROR al compilar.
+
+Tiempo transcurrido 00:00:00.25

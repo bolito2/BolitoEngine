@@ -1,0 +1,21 @@
+﻿Compilación iniciada a las 22/06/2015 10:34:33.
+     1>Proyecto "C:\Users\Propietario\Desktop\Bolito2\Juegos\OpenGL\OpenGL Game Engine\FirstGame\FirstGame.vcxproj" en el nodo 2 (Build destinos).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt MainGame.cpp main.cpp
+         main.cpp
+         MainGame.cpp
+     1>c:\users\propietario\desktop\bolito2\juegos\opengl\opengl game engine\firstgame\maingame.cpp(67): warning C4102: 'std': etiqueta sin referencia
+     1>c:\users\propietario\desktop\bolito2\juegos\opengl\opengl game engine\firstgame\maingame.cpp(89): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+     1>c:\users\propietario\desktop\bolito2\juegos\opengl\opengl game engine\firstgame\maingame.cpp(140): warning C4018: '<': no coinciden signed/unsigned
+     1>c:\users\propietario\desktop\bolito2\juegos\opengl\opengl game engine\firstgame\maingame.cpp(155): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+     1>c:\users\propietario\desktop\bolito2\juegos\opengl\opengl game engine\firstgame\maingame.cpp(156): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+         Generando código...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Propietario\Desktop\Bolito2\Juegos\OpenGL\OpenGL Game Engine\Debug\FirstGame.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib opengl32.lib glew32.lib BolitoEngine.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Propietario\Desktop\Bolito2\Juegos\OpenGL\OpenGL Game Engine\Debug\FirstGame.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Propietario\Desktop\Bolito2\Juegos\OpenGL\OpenGL Game Engine\Debug\FirstGame.lib" /MACHINE:X86 Debug\main.obj
+         Debug\MainGame.obj
+         FirstGame.vcxproj -> C:\Users\Propietario\Desktop\Bolito2\Juegos\OpenGL\OpenGL Game Engine\Debug\FirstGame.exe
+     1>Compilación del proyecto terminada "C:\Users\Propietario\Desktop\Bolito2\Juegos\OpenGL\OpenGL Game Engine\FirstGame\FirstGame.vcxproj" (Build destinos).
+
+Compilación correcta.
+
+Tiempo transcurrido 00:00:02.04
