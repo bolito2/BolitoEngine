@@ -3,23 +3,21 @@
 #include <iostream>
 #include <string>
 #include <GL/glew.h>
-#include "Sprite.h"
-#include "Errors.h"
-#include "GLTexture.h"
-
-#include "ImageLoader.h"
+#include <BolitoEngine/Sprite.h>
+#include <BolitoEngine/Errors.h>
+#include <BolitoEngine/GLTexture.h>
+#include <BolitoEngine/ImageLoader.h>
 
 MainGame::MainGame(int width, int height) : 
 
 	time(0.0f),
 	_width(width),
 	_height(height),
-	_window(nullptr),
 	_gameState(GameState::PLAY),
 	_maxFPS(60.0f)
 
 {
-
+	_mainCamera.init(width, height);
 }
 
 
@@ -28,49 +26,32 @@ MainGame::~MainGame()
 }
 
 void MainGame::run() {
+	
+
+	
 	initSystems();
 
-	_sprites.push_back(new Sprite());
-	_sprites.back()->init(-1.0f, -1.0f, 1.0f , 1.0f , "Textures/PNG/CharacterRight_Standing.png");
+	_sprites.push_back(new BolitoEngine::Sprite());
+	_sprites.back()->init(0.0f, 0.0f, _width/2 , _height/2, "Textures/PNG/CharacterRight_Standing.png");
 	
-	_sprites.push_back(new Sprite());
-	_sprites.back()->init(-1.0f, 0.0f, 1.0f, 1.0f, "Textures/PNG/CharacterRight_Standing.png");
+	_sprites.push_back(new BolitoEngine::Sprite());
+	_sprites.back()->init(_width/2, 0.0f, _width / 2, _height / 2, "Textures/PNG/CharacterRight_Standing.png");
 	
-	_sprites.push_back(new Sprite());
-	_sprites.back()->init(0.0f, 0.0f, 1.0f, 1.0f, "Textures/PNG/CharacterRight_Standing.png");
+	//_sprites.push_back(new BolitoEngine::Sprite());
+	//_sprites.back()->init(0.0f, 0.0f, 1.0f, 1.0f, "Textures/PNG/CharacterRight_Standing.png");
 	
-	_sprites.push_back(new Sprite());
-	_sprites.back()->init(0.0f, -1.0f, 1.0f, 1.0f, "Textures/PNG/CharacterRight_Standing.png");
+	//_sprites.push_back(new BolitoEngine::Sprite());
+	//_sprites.back()->init(0.0f, -1.0f, 1.0f, 1.0f, "Textures/PNG/CharacterRight_Standing.png");
 	gameLoop();
 }
 
 void MainGame::initSystems() {
+
 	SDL_Init(SDL_INIT_EVERYTHING);
-	_window = SDL_CreateWindow("Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _width, _height, SDL_WINDOW_OPENGL);
-
-	if (_window == nullptr) {
-		fatalError("Window wasn't created :(");
-	}
-
-	SDL_GLContext glContext = SDL_GL_CreateContext(_window);
-
-	if (glContext == nullptr) {
-		fatalError("GLContext wasn't initialized :(");
-	}
-
-	GLenum error = glewInit();
-
-	if (error != GLEW_OK) {
-		fatalError("Glew wasn't initialised :(");
-	}
-
-std:printf("*** OPENGL VERSION : %s *** \n", glGetString(GL_VERSION));
 
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-//clear
-	glClearColor(0.0f, 2.0f, 1.0f, 1.0f);
 
-	SDL_GL_SetSwapInterval(1);
+	_window.CreateWindow("LOLXD", _height, _width, 0);
 
 	initShaders();
 }
@@ -99,6 +80,9 @@ void MainGame::gameLoop() {
 		}
 		frameCounter++;
 		processInput();
+
+		_mainCamera.Update();
+
 		draw();
 
 		float currentTicks = SDL_GetTicks() - startTicks;
@@ -117,8 +101,25 @@ void MainGame::processInput() {
 
 	while (SDL_PollEvent(&evnt)) {
 		switch (evnt.type) {
-		case SDL_QUIT: 
+		case SDL_QUIT:
 			_gameState = GameState::STOP;
+			break;
+		case SDL_KEYDOWN:
+			switch (evnt.key.keysym.sym)
+			{
+			case SDLK_w :
+				_mainCamera.setPosition(_mainCamera.getPosition() + glm::vec2(0.0, 10.0));
+				break;
+			case SDLK_a:
+				_mainCamera.setPosition(_mainCamera.getPosition() + glm::vec2(10.0, 0.0));
+				break;
+			case SDLK_s:
+				_mainCamera.setPosition(_mainCamera.getPosition() + glm::vec2(0.0, -10.0));
+				break;
+			case SDLK_d:
+				_mainCamera.setPosition(_mainCamera.getPosition() + glm::vec2(-10.0, 0.0));
+				break;
+			}
 			break;
 		}
 	}
@@ -137,6 +138,10 @@ void MainGame::draw()
 	//GLint timeLocation = _shaders.getUniformLocation("time");
 	//glUniform1f(timeLocation, time);
 
+	GLint matrixLocation = _shaders.getUniformLocation("P");
+	glm::mat4 cameraMat = _mainCamera.getCameraMatrix();
+	glUniformMatrix4fv(matrixLocation, 1, GL_FALSE,&(cameraMat[0][0]));
+
 	for (int i = 0; i < _sprites.size();i++) {
 		_sprites[i]->draw();
 	}
@@ -144,7 +149,7 @@ void MainGame::draw()
 	glBindTexture(GL_TEXTURE_2D, 0);
 	_shaders.unuse();
 
-	SDL_GL_SwapWindow(_window);
+	_window.SwapBuffers();
 }
 void MainGame::CalculateFPS()
 {

@@ -6,20 +6,23 @@
 
 #include "GLTexture.h"
 
-class Sprite
-{
-public:
-	Sprite();
-	~Sprite();
+namespace BolitoEngine {
 
-	void init(float x, float y, float w, float h, std::string filePath);
+	class Sprite
+	{
+	public:
+		Sprite();
+		~Sprite();
 
-	void draw();
+		void init(float x, float y, float w, float h, std::string filePath);
 
-private:
-	GLTexture _texture;
-	GLuint _vboID;
-	float _x, _y, _w, _h;
+		void draw();
 
-};
+	private:
+		GLTexture _texture;
+		GLuint _vboID;
+		float _x, _y, _w, _h;
 
+	};
+
+}

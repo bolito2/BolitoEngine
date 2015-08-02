@@ -1,12 +1,15 @@
 #pragma once
 #include <SDL/SDL.h>
 #include <string>
-#include "Sprite.h"
-#include "Shaders.h"
-#include "ResourceManager.h"
-#include "GLTexture.h"
-
+#include <BolitoEngine/Sprite.h>
+#include <BolitoEngine/Shaders.h>
+#include <BolitoEngine/ResourceManager.h>
+#include <BolitoEngine/GLTexture.h>
+#include <BolitoEngine/Window.h>
+#include <BolitoEngine/Camera2D.h>
 #include <vector>
+
+using namespace BolitoEngine;
 
 enum class GameState { PLAY, STOP };
 
@@ -26,7 +29,6 @@ private:
 	void gameLoop();
 	void processInput();
 	void draw();
-	SDL_Window* _window;
 	GameState _gameState;
 	MainGame* _prueba;
 	MainGame* _prueba2;
@@ -37,11 +39,15 @@ private:
 
 	MainGame *_subscribed[10];
 
-	std::vector<Sprite*> _sprites;
+	std::vector<BolitoEngine::Sprite*> _sprites;
 
 	Shaders _shaders;
 
+	Window _window;
+
 	int _width;
 	int _height;
+
+	Camera2D _mainCamera;
 };
 

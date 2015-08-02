@@ -8,8 +8,9 @@
 
 #include "Errors.h"
 
-
 #include <iostream>
+
+namespace BolitoEngine {
 
 	GLTexture ImageLoader::loadImage(std::string path) {
 
@@ -23,7 +24,7 @@
 		}
 
 		int error = decodePNG(out, width, height, &(in[0]), in.size());
-		if(error != 0){
+		if (error != 0) {
 			fatalError("Failed to decode the png at " + path);
 		}
 
@@ -46,3 +47,4 @@
 
 		return texture;
 	}
+}

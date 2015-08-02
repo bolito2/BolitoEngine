@@ -1,41 +1,44 @@
 #pragma once
 
-struct Color {
-	GLubyte R;
-	GLubyte G;
-	GLubyte B;
-	GLubyte A;
-};
+namespace BolitoEngine {
 
-struct Position {
-	float x;
-	float y;
-};
+	struct Color {
+		GLubyte R;
+		GLubyte G;
+		GLubyte B;
+		GLubyte A;
+	};
 
-struct UV {
-	float U;
-	float V;
-};
+	struct Position {
+		float x;
+		float y;
+	};
 
-struct Vertex 
-{
-	Position position;
-	Color color;
-	UV uv;
+	struct UV {
+		float U;
+		float V;
+	};
 
-	void SetColor(GLubyte r, GLubyte g, GLubyte b, GLubyte a) {
-		color.R = r;
-		color.G = g;
-		color.B = b;
-		color.A = a;
-	}
-	void setUV(float u, float v) {
-		uv.U = u;
-		uv.V = v;
-	}
+	struct Vertex
+	{
+		Position position;
+		Color color;
+		UV uv;
 
-	void setPosition(float x, float y) {
-		position.x = x;
-		position.y = y;
-	}
-};
+		void SetColor(GLubyte r, GLubyte g, GLubyte b, GLubyte a) {
+			color.R = r;
+			color.G = g;
+			color.B = b;
+			color.A = a;
+		}
+		void setUV(float u, float v) {
+			uv.U = u;
+			uv.V = v;
+		}
+
+		void setPosition(float x, float y) {
+			position.x = x;
+			position.y = y;
+		}
+	};
+}

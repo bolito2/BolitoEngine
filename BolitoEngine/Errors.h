@@ -1,5 +1,6 @@
 #pragma once
 
 #include <string>
-
-extern void fatalError(std::string error);
+namespace BolitoEngine {
+	extern void fatalError(std::string error);
+}

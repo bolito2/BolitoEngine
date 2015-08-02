@@ -3,7 +3,11 @@
 #include <string>
 #include "GLTexture.h"
 
-class ImageLoader {
-public :
-	static GLTexture loadImage(std::string path);
-};
+namespace BolitoEngine {
+
+	class ImageLoader {
+	public:
+		static GLTexture loadImage(std::string path);
+	};
+
+}

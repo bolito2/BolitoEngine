@@ -1,20 +1,12 @@
-﻿Compilación iniciada a las 22/06/2015 10:17:41.
+﻿Compilación iniciada a las 02/07/2015 9:37:42.
      1>Proyecto "C:\Users\Propietario\Desktop\Bolito2\Juegos\OpenGL\OpenGL Game Engine\BolitoEngine\BolitoEngine.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\BolitoEngine.pdb" /Gd /TP /analyze- /errorReport:prompt Errors.cpp ImageLoader.cpp IOManager.cpp picoPNG.cpp ResourceManager.cpp Shaders.cpp Sprite.cpp TextureCache.cpp
-         TextureCache.cpp
-         Sprite.cpp
-         Shaders.cpp
-         ResourceManager.cpp
-         picoPNG.cpp
-         IOManager.cpp
-     1>c:\users\propietario\desktop\bolito2\juegos\opengl\opengl game engine\bolitoengine\iomanager.cpp(14): warning C4244: 'inicializando': conversión de 'std::streamoff' a 'int'; posible pérdida de datos
-     1>c:\users\propietario\desktop\bolito2\juegos\opengl\opengl game engine\bolitoengine\iomanager.cpp(17): warning C4244: '-=': conversión de 'std::streamoff' a 'int'; posible pérdida de datos
-         ImageLoader.cpp
-         Errors.cpp
-         Generando código...
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\BolitoEngine.pdb" /Gd /TP /analyze- /errorReport:prompt Camera2D.cpp
+         Camera2D.cpp
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\Propietario\Desktop\Bolito2\Juegos\OpenGL\OpenGL Game Engine\Debug\BolitoEngine.lib" SDL2.lib SDL2main.lib glew32.lib opengl32.lib /NOLOGO Debug\Errors.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\Propietario\Desktop\Bolito2\Juegos\OpenGL\OpenGL Game Engine\Debug\BolitoEngine.lib" SDL2.lib SDL2main.lib glew32.lib opengl32.lib /NOLOGO Debug\BolitoEngine.obj
+         Debug\Camera2D.obj
+         Debug\Errors.obj
          Debug\ImageLoader.obj
          Debug\IOManager.obj
          Debug\picoPNG.obj
@@ -22,6 +14,7 @@
          Debug\Shaders.obj
          Debug\Sprite.obj
          Debug\TextureCache.obj
+         Debug\Window.obj
      1>glew32.lib(glew32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR ya se defini¾ en SDL2.lib(SDL2.dll); segunda definici¾n omitida
      1>glew32.lib(glew32.dll) : warning LNK4221: Este archivo de objeto no define ning·n sÝmbolo p·blico que no se haya definido previamente, por lo que no se usarß en ninguna vinculaci¾n que utilice esta biblioteca
      1>opengl32.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR ya se defini¾ en SDL2.lib(SDL2.dll); segunda definici¾n omitida
@@ -31,4 +24,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:04.93
+Tiempo transcurrido 00:00:01.42

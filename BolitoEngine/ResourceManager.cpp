@@ -1,8 +1,11 @@
 #include "ResourceManager.h"
 
-TextureCache ResourceManager::_textureCache;
+namespace BolitoEngine {
 
-GLTexture ResourceManager::getTexture(std::string filePath)
-{
-	return _textureCache.getTexture(filePath);
+	TextureCache ResourceManager::_textureCache;
+
+	GLTexture ResourceManager::getTexture(std::string filePath)
+	{
+		return _textureCache.getTexture(filePath);
+	}
 }
